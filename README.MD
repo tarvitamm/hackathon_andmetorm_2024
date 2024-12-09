@@ -17,3 +17,23 @@ This project combines raster data analysis with geocoding to identify potentiall
    - Prints addresses flagged as dangerous.
 
 ---
+
+# Explanation of `elupaikade_säilitamine.py`
+## Dangerous Area Detection with Raster and Geocoding
+
+This script combines raster data analysis with geocoding to identify dangerous areas based on predefined conditions. It integrates geospatial data and address-based geocoding, calculating areas flagged as dangerous.
+
+### Features
+1. **Convert Area Units:** Converts area values from hectares or square meters into a unified format (m²).
+2. **Geocode Addresses:** Uses a public API to get latitude and longitude for input addresses.
+3. **Sample Raster Values:** Extracts raster values from a GeoTIFF file at geocoded locations.
+4. **Identify Dangerous Areas:** Flags areas as dangerous if a specified raster condition (e.g., value ≥ 5) is met.
+5. **Calculate Statistics:**
+   - Total number of dangerous areas.
+   - Total area flagged as dangerous.
+   - Percentage of the total area flagged as dangerous.
+6. **Output Results:** Saves results, including geocoded data and flagged addresses, and prints flagged addresses.
+
+--- 
+
+
