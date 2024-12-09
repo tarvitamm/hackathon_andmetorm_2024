@@ -18,22 +18,33 @@ This project combines raster data analysis with geocoding to identify potentiall
 
 ---
 
-# Explanation of `elupaikade_säilitamine.py`
-## Dangerous Area Detection with Raster and Geocoding
+# Explanation of võõrliikide_arv.py
+## Analyzing Raster Data for Identifying Dangerous Areas
 
-This script combines raster data analysis with geocoding to identify dangerous areas based on predefined conditions. It integrates geospatial data and address-based geocoding, calculating areas flagged as dangerous.
+This notebook processes geospatial and raster data to detect and analyze areas flagged as potentially dangerous. The workflow includes data preprocessing, geocoding, raster value extraction, and statistical analysis.
 
-### Features
-1. **Convert Area Units:** Converts area values from hectares or square meters into a unified format (m²).
-2. **Geocode Addresses:** Uses a public API to get latitude and longitude for input addresses.
-3. **Sample Raster Values:** Extracts raster values from a GeoTIFF file at geocoded locations.
-4. **Identify Dangerous Areas:** Flags areas as dangerous if a specified raster condition (e.g., value ≥ 5) is met.
-5. **Calculate Statistics:**
-   - Total number of dangerous areas.
-   - Total area flagged as dangerous.
-   - Percentage of the total area flagged as dangerous.
-6. **Output Results:** Saves results, including geocoded data and flagged addresses, and prints flagged addresses.
+### Key Steps
+1. **Data Preparation:**
+   - Reads area data (e.g., address, area size) and converts measurements to square meters.
+   - Loads raster data (GeoTIFF format) for analysis.
 
---- 
+2. **Geocoding Addresses:**
+   - Retrieves geographical coordinates (latitude and longitude) for input addresses using a geocoding API.
+
+3. **Sampling Raster Values:**
+   - Extracts raster values corresponding to geocoded coordinates to assess conditions (e.g., soil quality, pollution levels).
+
+4. **Flagging Dangerous Areas:**
+   - Defines areas as dangerous if sampled raster values meet specified conditions (e.g., threshold values ≥ 5).
+
+5. **Statistical Analysis:**
+   - Calculates the total number of dangerous areas.
+   - Sums the total area marked as dangerous.
+   - Computes the proportion of dangerous areas relative to the total area.
+
+6. **Output Results:**
+   - Saves the analysis results, including flagged addresses and corresponding raster values.
+   - Displays a summary of dangerous areas and their statistics.
+
 
 
